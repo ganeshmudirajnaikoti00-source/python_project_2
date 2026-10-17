@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me | My Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f2ff;
+            color: #25213b;
+            transition: 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6c36c9, #9b59e8);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        nav {
+            margin-top: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .theme-btn {
+            margin-top: 18px;
+            padding: 9px 18px;
+            border: 1px solid white;
+            border-radius: 20px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h2 {
+            color: #6c36c9;
+            font-size: 30px;
+        }
+
+        .heading p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(70, 40, 120, 0.10);
+        }
+
+        .card h3 {
+            color: #6c36c9;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            margin-bottom: 22px;
+            overflow-wrap: anywhere;
+        }
+
+        .detail h4 {
+            color: #6c36c9;
+            margin-bottom: 5px;
+        }
+
+        .detail p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-links a,
+        .action-link {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #6c36c9;
+            color: white;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover,
+        .action-link:hover {
+            background: #4f239b;
+            transform: translateY(-2px);
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px 0 7px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            color: #25213b;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #8b50dc;
+            box-shadow: 0 0 5px rgba(108, 54, 201, 0.15);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-btn {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #6c36c9, #9b59e8);
+            color: white;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .note {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+            margin-top: 12px;
+        }
+
+        footer {
+            background: #211735;
+            color: white;
+            text-align: center;
+            padding: 22px 15px;
+            margin-top: 35px;
+        }
+
+        /* Dark Mode */
+
+        body.dark {
+            background: #171321;
+            color: #f5f1ff;
+        }
+
+        body.dark .card {
+            background: #261e37;
+        }
+
+        body.dark .heading p,
+        body.dark .detail p,
+        body.dark .note {
+            color: #c6bdd7;
+        }
+
+        body.dark input,
+        body.dark textarea {
+            background: #342a48;
+            color: white;
+            border-color: #514363;
+        }
+
+        body.dark input::placeholder,
+        body.dark textarea::placeholder {
+            color: #c6bdd7;
+        }
+
+        @media (max-width: 800px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .main-container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+        <p>Let's connect and work together!</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="skills.html">Skill</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="theme-btn" id="themeButton" type="button">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <main class="main-container">
+
+        <div class="heading">
+            <h2>Get In Touch</h2>
+            <p>Have a question or opportunity? Feel free to contact me.</p>
+        </div>
+
+        <div class="contact-layout">
+
+            <!-- Contact Details -->
+
+            <section class="card">
+
+                <h3>Contact Details</h3>
+
+                <div class="detail">
+                    <h4>👤 Name</h4>
+                    <p>Naikoti Ganesh</p>
+                </div>
+
+                <div class="detail">
+                    <h4>📧 Email</h4>
+                    <p>ganeshmudirajnaikoti00@gmail.com</p>
+                </div>
+
+                <div class="detail">
+                    <h4>📱 Phone</h4>
+                    <p>+91 8367340198</p>
+                </div>
+
+                <div class="detail">
+                    <h4>📍 Location</h4>
+                    <p>Hyderabad, Telangana, India</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+
+                <div class="social-links">
+                    <a class="action-link" href="https://wa.me/918367340198" target="_blank" rel="noopener">WhatsApp
+                        Me</a>
+
+                    <a class="action-link" href="mailto:ganeshmudirajnaikoti00@gmail.com">Email Me</a>
+
+                    <a class="action-link" href="tel:+918367340198">Call Me</a>
+                </div>
+
+            </section>
+
+            <!-- Send Me a Message -->
+
+            <section class="card">
+
+                <h3>✉️ Send Me a Message</h3>
+
+                <form id="contactForm">
+
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="mobile">Your Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="Enter your 10-digit mobile number" pattern="[0-9]{10}"
+                        maxlength="10" inputmode="numeric" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Enter message subject" required>
+
+                    <label for="receiver">Receiver WhatsApp Number</label>
+                    <input type="tel" id="receiver" placeholder="Example: 919876543210" pattern="[0-9]{10,15}"
+                        inputmode="numeric" required>
+
+                    <p class="note">
+                        Enter the receiver's country code with the mobile number.
+                        For India, use 91 before the 10-digit number.
+                        Do not enter + or spaces.
+                    </p>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit" class="form-btn">
+                        Send Message on WhatsApp
+                    </button>
+
+                    <p class="note">
+                        WhatsApp will open with your message ready.
+                        You must press Send in WhatsApp to send it.
+                    </p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Dark Mode
+
+        const themeButton = document.getElementById("themeButton");
+
+        if (localStorage.getItem("portfolioTheme") === "dark") {
+            document.body.classList.add("dark");
+            themeButton.textContent = "☀️ Light Mode";
+        }
+
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                localStorage.setItem("portfolioTheme", "dark");
+                themeButton.textContent = "☀️ Light Mode";
+            } else {
+                localStorage.setItem("portfolioTheme", "light");
+                themeButton.textContent = "🌙 Dark Mode";
+            }
+        });
+
+        // WhatsApp Message Form
+
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const receiver = document.getElementById("receiver").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return;
+            }
+
+            if (!/^[0-9]{10,15}$/.test(receiver)) {
+                alert("Enter the receiver's WhatsApp number with country code.");
+                return;
+            }
+
+            const whatsappMessage =
+                "Hello!\n\n" +
+                "Name: " + name + "\n" +
+                "Mobile: " + mobile + "\n" +
+                "Email: " + email + "\n" +
+                "Subject: " + subject + "\n\n" +
+                "Message:\n" + message;
+
+            const whatsappURL =
+                "https://wa.me/" + receiver +
+                "?text=" + encodeURIComponent(whatsappMessage);
+
+            window.open(whatsappURL, "_blank");
+        });
+    </script>
+
+</body>
+
+</html>
